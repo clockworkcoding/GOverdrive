@@ -11,13 +11,13 @@ const (
 )
 
 //BuildAuthURL generates the interpolated auth URI, probably won't be used
-func BuildAuthURL(clientID, accountID, redirectURI, state string) string {
+func BuildAuthURL(clientID, accountID, state, redirectURI string) string {
 	var URL *url.URL
 	URL, _ = url.Parse(AuthURL)
 	parameters := url.Values{}
 	parameters.Add("client_id", clientID)
 	parameters.Add("redirect_uri", redirectURI)
-	parameters.Add("scope", accountID)
+	parameters.Add("scope", "accountid:"+accountID)
 	parameters.Add("state", state)
 	URL.RawQuery = parameters.Encode()
 
