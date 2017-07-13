@@ -12,6 +12,7 @@ func (c *Client) GetLibrary(accountID string) (library Library, err error) {
 	if err != nil {
 		return
 	}
+	log.Printf("Status Code: %d /n Status Message: %s", resp.StatusCode, resp.Status)
 	if resp.StatusCode != 200 {
 		return library, errors.New(resp.Status)
 	}
