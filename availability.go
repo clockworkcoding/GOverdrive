@@ -42,20 +42,6 @@ type Availability struct {
 		CopiesOwned     int `json:"copiesOwned"`
 		CopiesAvailable int `json:"copiesAvailable"`
 	} `json:"accounts"`
-	Actions []struct {
-		EditLendingPeriod struct {
-			Href   string `json:"href"`
-			Type   string `json:"type"`
-			Method string `json:"method"`
-			Fields []struct {
-				Name     string   `json:"name"`
-				Type     string   `json:"type"`
-				Value    string   `json:"value,omitempty"`
-				Optional bool     `json:"optional"`
-				Options  []string `json:"options,omitempty"`
-			} `json:"fields"`
-		} `json:"editLendingPeriod"`
-	} `json:"actions"`
 	Available        bool   `json:"available"`
 	AvailabilityType string `json:"availabilityType"`
 	CopiesOwned      int    `json:"copiesOwned"`
